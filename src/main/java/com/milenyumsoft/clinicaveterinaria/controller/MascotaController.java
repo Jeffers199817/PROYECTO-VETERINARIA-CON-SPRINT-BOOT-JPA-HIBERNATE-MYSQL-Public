@@ -5,6 +5,9 @@ import com.milenyumsoft.clinicaveterinaria.service.MascotaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class MascotaController {
 
@@ -35,4 +38,17 @@ public class MascotaController {
         mascotaService.deleteMascota(id);
         return "Mascota eliminada, exitosamente";
     }
+
+    @GetMapping("mascota/traer/{especie}/{raza}")
+    public List<Mascota> traerMascota(@PathVariable String especie, @PathVariable String raza) {
+        List<Mascota> listaMascoRazaEspecio = new ArrayList();
+        List<Mascota> listaMascota= mascotaService.listMascota();
+        for(Mascota masco: listaMascota){
+            if(masco.getEspecie().toLowerCase().contains("perro") && masco.getRaza().toLowerCase().contains("caniche")){
+                listaMascoRazaEspecio.add(masco);
+            }
+        }
+        return listaMascoRazaEspecio;
+    }
+
 }
