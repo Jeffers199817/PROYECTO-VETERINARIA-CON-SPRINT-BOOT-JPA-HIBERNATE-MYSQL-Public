@@ -18,4 +18,6 @@ public interface IMascotaService {
     public Mascota findMascota(Long id);
 
     public Mascota updateMascota(Mascota mascota);
+
+    public Mascota updateMascota(Long idOriginal, Long idNuevo, String nombreNuevo , String especieNuevo, String razaNuevo , String colorNuevo);
 }

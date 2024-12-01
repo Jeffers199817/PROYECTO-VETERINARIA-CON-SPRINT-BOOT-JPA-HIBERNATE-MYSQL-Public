@@ -43,4 +43,19 @@ public class MascotaService implements IMascotaService {
         Mascota masco = this.findMascota(mascota.getIdMascota());
         return masco;
     }
+
+    @Override
+    public Mascota updateMascota(Long idOriginal, Long idNuevo, String nombreNuevo, String especieNuevo, String razaNuevo, String colorNuevo) {
+
+       Mascota masco = this.findMascota(idOriginal);
+        masco.setIdMascota(idNuevo);
+        masco.setNombre(nombreNuevo);
+        masco.setEspecie(especieNuevo);
+        masco.setRaza(razaNuevo);
+        masco.setColor(colorNuevo);
+
+        return masco;
+    }
+
+
 }
