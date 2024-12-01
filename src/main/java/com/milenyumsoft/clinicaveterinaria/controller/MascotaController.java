@@ -51,4 +51,18 @@ public class MascotaController {
         return listaMascoRazaEspecio;
     }
 
+    @GetMapping("mascota/editar")
+    public Mascota editarMascota(@RequestParam Long idOriginal,
+                                 @RequestParam(required = false, name="id") Long idMascotaNuevo,
+                                 @RequestParam(required = false, name="nombre" )String nombreNuevo,
+                                 @RequestParam(required = false, name="especie") String especieNuevo,
+                                 @RequestParam(required = false, name="raza") String razaNuevo,
+                                 @RequestParam(required = false, name="color") String colorNuevo){
+
+       Mascota masco= mascotaService.findMascota(idOriginal);
+
+
+        return masco;
+    }
+
 }
