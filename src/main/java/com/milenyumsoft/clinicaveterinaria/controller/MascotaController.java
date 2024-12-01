@@ -60,6 +60,7 @@ public class MascotaController {
                                  @RequestParam(required = false, name="color") String colorNuevo){
 
        Mascota masco= mascotaService.findMascota(idOriginal);
+        System.out.println("La entidad de mascota es"  + masco );
 
 
         return masco;
