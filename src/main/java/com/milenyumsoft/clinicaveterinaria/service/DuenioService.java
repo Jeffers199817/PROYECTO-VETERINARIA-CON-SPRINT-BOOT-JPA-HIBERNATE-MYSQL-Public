@@ -29,7 +29,7 @@ public class DuenioService implements IDuenioService {
 
     @Override
     public List<Duenio> traerDuenios() {
-
+        System.out.println("La prueba de traer duenios exito ");
         return duenioRepository.findAll();
     }
 
@@ -47,7 +47,7 @@ public class DuenioService implements IDuenioService {
 
    Duenio dueno=this.getDuenio(duenio.getId());
 
-
+        System.out.println("El sistema de registro ha sido aprobado ");
         return dueno;
     }
 }
