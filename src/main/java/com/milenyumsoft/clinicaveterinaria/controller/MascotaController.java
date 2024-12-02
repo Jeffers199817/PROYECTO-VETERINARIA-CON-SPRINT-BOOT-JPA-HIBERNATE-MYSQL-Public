@@ -61,6 +61,7 @@ public class MascotaController {
 
        Mascota masco= mascotaService.findMascota(idOriginal);
         System.out.println("La entidad de mascota es"  + masco );
+        System.out.println("La entidad es creada exitosamente");
 
 
         return masco;
